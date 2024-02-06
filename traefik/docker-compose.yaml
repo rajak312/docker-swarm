@@ -9,8 +9,6 @@ services:
       - "--providers.docker.swarmMode=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.http.address=:80"
-    networks:
-      - traefik-net
     ports:
       - "8080:8080"
       - "80:80"
@@ -21,6 +19,3 @@ services:
         constraints:
           - node.role == manager
 
-networks:
-  traefik-net:
-    driver: overlay

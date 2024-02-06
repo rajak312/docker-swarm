@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app1:
+    image: nginx:latest  # Example image, replace with your actual application image
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.app1.rule=Host(`app1.localtest.me`)"
+        - "traefik.http.services.app1.loadbalancer.server.port=80"
