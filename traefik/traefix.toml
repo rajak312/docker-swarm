@@ -1,0 +1,9 @@
+# traefik.toml
+defaultEntryPoints = ["http"]
+[entryPoints]
+  [entryPoints.http]
+  address = ":8080"
+
+[api]
+  dashboard = true
+  entryPoint = "http"
